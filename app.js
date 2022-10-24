@@ -161,3 +161,4 @@ person.isProgrammer = true       //Можно добавлять ключи
 console.log(person)           
 person.greet()
 
+// dev
