@@ -1,164 +1,71 @@
-// 1 Переменные 
-// variable (var) устаревшая переменная, старатся не юзать
-// constanta (не меняются(Только для чтения), лучше создать новую переменную)
-// let 
-// cameCase Правильное написание кода. Если два слова то пишим так firstName, first с маленькой Name с большой. Код выглядит более приятно и понятно. 
+// 1 Number
+//const num = 42  //integer
+//const float = 42.42 //float
+//const pow = 10e3 //pow (Возводим степень)
 
-//const firstName = 'Dmitriy' //string
-//const age = 23 number
-//const isProgrammer = true // boolean
+//console.log ('MAX_SAFE_INTEGER', Number.MAX_SAFE_INTEGER)  //Максимально допустимое число с которым можно работать
+//console.log ('Math.pow 53', Math.pow(2,53)-1)
+//console.log ('MIN_SAFE_INTEGER', Number.MIN_SAFE_INTEGER) //Минимальное число
+//console.log('MAX_VALUE', Number.MAX_VALUE) // Максимальное число в степени
+//console.log('MIN_VALUE', Number.MIN_VALUE) // Минимальное  в степени
+//console.log ('POSITIVE_INFINITY', Number.POSITIVE_INFINITY) //Позитив Бесконечность. Можно получить при деление на 0. 1 / 0
+//console.log ('NEGATIVE_INFINITY', Number.NEGATIVE_INFINITY) //Негатив
+//console.log (Number.NaN) // Not A Number 
+//console.log (typeof NaN) //Где-то меня наебывают (Число)
+//const weird = 2 / undefined
+//console.log (Number.isNaN(weird))   //Проверка на работу с числом. Хз пригодится или нет
+//console.log(isNaN(42))  // Норм число, можно работать
+//console.log(isFinite (42))  // Проверка на конечность числа
+//console.log(isFinite (Infinity))
 
-// 2 Мутирование 
-//console.log ('Имя человека:' + firstName + ', а возраст человека: ' + age) Можно объединять строки и числа. JS делает это сам по себе, но есть команда
-//.toString котокая приводит значение к строке
-//alert нету в JS, она есть в HTML
-//console.log ('Имя человека:' + firstName + ', а возраст человека: ' + age) 
+//const stringInt = '40'
+//const stringFloat = '40.42'
+//console.log(stringInt + 2)  Будет 402 потому что все считается строкой. Я ПОМНЮ ЭТОТ МЕМ ИЛЬЯ
+//console.log(parseInt(stringInt) + 2)  // Преобразовал в число. Работает только с integer
+//console.log(Number(stringInt) + 2) //Все 3 написания верны. ИЛЬЯ поясни какое чаще юзается. 
+//console.log(+stringInt + 2) 
 
-//const lastName = prompt ('Введите фамилию') Выводим на странице поле для заполнения и воодим данные
-//alert (firstName + ' ' + lastName) Выводим данные пользователю 
+//console.log(parseFloat(stringFloat) + 2) // Работает с Float, по аналогии 
+//console.log(+stringFloat + 2) // Оба написания верны
 
-// 3 Операторы
-//let currentYear = 2022
-//const birthYear = 1998
+//console.log(0.4 + 0.2 ) // не выйдет 0.6 из-за особенности хранение инфы в jave
+//console.log((2 / 5)+ (1 / 5))
+//console.log ((0.4 + 0.2).toFixed(1)) //Сколько чисел оставим  после запятой. Результат будет в виде строки
+//console.log (+(0.4 + 0.2).toFixed(1)) // Теперь это число
+//console.log (parseFloat((0.4 + 0.2).toFixed(1)))
 
-//const age = currentYear - birthYear 
+// 2 BigInt отдельный тип данных
+//console.log(typeof 9007199254740991955645n)
+//console.log(9007199254740991955645n) // Большое число. С ним можно взаимодействовать если поставить 'n'
+//console.log(9007199254740991955645n - 900719925474099195561n)
+//console.log(9007199254740991955645.555n) // Будет ошибка потому что Int
+//console.log(10n-4) Где есть n это BigInt. И данный пример ошибка
+//BigInt скипнул, считаю что ПОКА ЧТО не пригодится
 
-//const a = 10
-//const b = 5
+// 3 Math очень полезен для вычесления чего либо  
+//console.log(Math.E) //Экспонента
+//console.log(Math.PI) //ПИ ВЕЛИКОЕ ЧИСЛО ПИ
+//console.log(Math.sqrt(25)) //Квадратный корень
+//console.log(Math.pow(5, 3)) //В степень 
+//console.log(Math.abs(-42)) //Модуль числа
+//console.log(Math.max(42, 12, 23, 11, 430)) //Показывает максимальное число
+//console.log(Math.min(42, 12, 23, 11, 430)) // Минимальное число
+//console.log(Math.floor(4.8)) // Округляет в минимум
+//console.log(Math.ceil(4.8)) // Округляет большую сторону
+//console.log(Math.round(4.8)) // Округляет к ближайшему целому числу
+//console.log(Math.trunc(4.8)) //Отсекает дробные знаки. Т.е 4.9 = 4 , 66.6 = 66
+//console.log(Math.random()) // Рандом 
 
-//let c = 32
-//c = c + a оба синтаксиса верны 
-//c += a
-//console.log (a + b)
-//console.log (a - b)
-//console.log (a * b)
-//console.log (a / b)
-//console.log (currentYear++)
-//console.log (currentYear)
-
-// 4 Типы данных 
-
-//const isProgrammer = true 
-//const name = 'Dima'
-//const age = 23
-//let x               // в константу всегда нужно что-то заносить не может быть пустым. в let можно
-//console.log(typeof isProgrammer) //boolean
-//console.log(typeof name) //string
-//console.log(typeof age)//number
-//console.log(typeof x)//undefiend 
-//console.log(null)//null
-
-// 5 Приоритет операторов 
-
-//const fullAge = 23
-//const birthYear = 1998
-//currentYear = 2022
-
-// > < >= <=
-//const isFullAge = currentYear - birthYear >= fullAge
-//console.log (isFullAge)
-// Приоритеты можно смотреть тут https://developer.mozilla.org
-
-// 6 условные операторы 
-//const courseStatus = 'fail' //ready, fail, pending
-
-//if (courseStatus === 'ready') {          // Правильный синтаксис
-//    console.log('Курс готов')  // Консоль тут нужна для проверки исполнение оператора 
-//} else if (courseStatus === 'pending') {
-//    console.log ('Курс не готов')
-//} else {
-//    console.log ('Нету')
+// 4 Example
+//function gerRandomBetween (min, max) {
+//    return Math.random() * (max - min) + min
 //}
 
-//const isReady = true
+//console.log(gerRandomBetween(10, 42))
 
-//if (isReady === true) {
-//  console.log ('Все готово')      Одно и то же значение что и ниже
-//} Так как там булевое значение не нужно указывать на переменную 
-//1.  if (isReady) {
-//    console.log ('Все готово')
-//} else {
-//    console.log ('Все не готово')
+//function gerRandomBetween (min, max) {            //отсек дробную часть
+//    return Math.floor(Math.random() * (max - min + 1) + min)
 //}
 
-// Тернарное выражение. Для простых выражений
-//isReady ? console.log ('Все готово') : console.log ('Все не готово')
+//console.log(gerRandomBetween(10, 42))
 
-//const num1 = 42 //number 
-//const num2 = '42' //string 
-
-//console.log (num1 === num2) === проверяет не только значение, но и тип данных. == проверяет только значение  42=42
-
-// 7 Булевая логика  
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Logical_AND
-
-
-// 8 Функции 
-
-//function calculateAge (year) {
-//    return 2022 - year
-//}
-
-//const myAge = calculateAge (1998)
-//console.log(calculateAge(1998))
-
-//function logInfoAbount (name, year){
-//    const age = calculateAge(year)
-//
-//    if (age > 0){
-//        console.log('Человек по имени' +  name  + ' сейчас имеет возраст ' + age)
-//    } else { 
-//        console.log ('ЯДЕРНЫЙ АПОКАЛИПСИС')
-//
-//    }
-//
-//}
-//logInfoAbount (' Дмитрий', 1998)
-//logInfoAbount (' Дмитрий', 2023)
-
-// 9 Массивы
-
-//const nameGuild = ['Кадзу', 'Беовульв', 'Грэйк']
-//const nameGuild = new Array ('Кадзу', 'Беовульв', 'Грэйк')
-//console.log (nameGuild) //посмотреть весь массив
-//console.log (nameGuild[0])  //Посмотреть что находится под первым индексом
-//console.log (nameGuild.length)
-
-//nameGuild[2] = 'Джининг'   //Хоть и констатнта но содержимое массива можно менять
-//nameGuild[3] = 'Грэйк'     //Можно расширять массив
-//nameGuild[nameGuild.length] = 'Фливи'   // Можно складывать в конец новые данные в массиве
-//console.log(nameGuild)
-
-// 10 Циклы
-//const nameGuild = ['Кадзу', 'Беовульв', 'Грэйк', 'Фливи']  //Группы
-
-//for (let i = 0; i< nameGuild.length; i++) {       //Можно писать так
-//    const guild = nameGuild[i]
-//    console.log(guild)
-//}
-//for (let guild of nameGuild) {                     //Но так менее грамоздко 
-//   console.log(guild)
-//}
-
-// 11 Объекты 
-const person = {       // person = объект 
-    firstName: 'Дмитрий',
-    lastName: 'Лагода',
-    year: 1998,
-    languages: ['Ru', 'Kz', 'En'],
-    hasWife: false,
-    greet: function(){             //метод
-        console.log ('greet')
-    }
-}
-
-console.log(person.lastName)            //обращение через ТОЧКУ.
-console.log(person ['firstName'])       //через квадратные скобки, но нужно передавать строчяку
-const key = 'languages'                 // Динамический ключ
-console.log(person[key])               
-person.hasWife = true            //Можно менять ключи
-person.isProgrammer = true       //Можно добавлять ключи   
-console.log(person)           
-person.greet()
-
-// dev
