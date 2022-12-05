@@ -1,47 +1,81 @@
-// 1 string
-//const name = 'Раб'
-//const age = 24
+// //1 Функции 
+// //Function Declaration  можно обращатся когда хотим 
+// function greet(name){
+//     console.log ('Привет - ', name)
+// }
 
-//const output = 'Привет, я анальный ' + name + ' и мой возраст ' + age + ' лет ' //Обе верны
-//const output = `Привет меня зовут ${name}  и мой возраст ${age} лет `
-//const output = `Привет меня зовут ${name}  и мой возраст ${age < 26 ? 'A' : 'B'} лет ` //В фигурных скобках можно так же использовать тернарные выражения
-//console.log(output)
+// //Function Expression   Создаем функцию и складываем ее в переменную. Нельзя получить доступ до инициализации
+// const greet2 = function greet2(name){     
+//     console.log ('Привет 2 - ', name)
+// }
 
-//const output = `
-//<div>This is div</div>   //Просто для примера, сохраняются все отступы и ковычки
-//<p>this is o</p>         //Да-да это HTML
-//`
-//console.log(output)
+//  greet('Дима')
+// greet2('Дима')
+// //Function Expression   будет ошибка   Cannot access 'greet2' before initialization
+// // const greet2 = function greet2(name){     
+//      console.log ('Привет 2 - ', name)
+//  }
 
-//const name = 'Лианоара'
-//new String() что JS делает под капотом,создает новую строчку
-//console.log(name.length) //Можно глянуть сколько символов
-//console.log(name.toUpperCase()) //Можно привести все к вернему регистру(капс)
-//console.log(name.toLowerCase()) //Можно привести все к нижнему регистру
-//console.log(name.charAt(4)) // На какой позиции находится какой символ
-//console.log(name.indexOf('ара')) // Проверитьь комбинацию строк 
-//console.log(name.indexOf('!')) // можно проверить на наличие значение и сравнивать с ним. Если нету вернет -1
-//console.log(name.startsWith('лиа')) // Проверка старта строки с ()
-//console.log(name.toLowerCase().startsWith('лиа')) //Логика понятна
-//console.log(name.endsWith('лиа')) //Точно так же, только с конца
-//console.log(name.repeat(3)) //Повторять строчку
-//const string = '      password      '
-//console.log(string.trim())  // отчищает пробелы. Так же работает с Left и Right
+//  console.log(typeof greet) скажет что это функция. А по факту объект 
+//  console.dir(greet) 
 
-//function logPerson(s, name, age) {  
-//    console.log(s, name, age ) //можно апперировать массивом и его значениями
-//    if (age < 0){              //Можно валидировать параметр. 
-//        age = 'Еще не помер'
-//    }
-//    return `${s[0]}${name}${s[1]}${age}${s[2]}`
-//}
-//const personName = 'Лианоара'
-//const personName2 = 'Грэйк'
-//const personAge = 24
-//const personAge2 = -30
-//
-//const output = logPerson `Имя: ${personName}, Возраст: ${personAge}!`
-//const output2 = logPerson `Имя: ${personName2}, Возраст: ${personAge2}!`
-//
-//console.log(output)
-//console.log(output2)
+// 2 Анонимные функции
+// let counter = 0
+// const interval = setInterval(function(){  //setTimeout
+//     if (counter === 5) {
+//         clearInterval(interval)  //clearTimeout
+//     } else {
+//       console.log(++counter)
+//     }
+// },1000)
+
+// 3 Стрелочные функции   Поясни за такой тип функций 
+
+// function greet(name){
+//     console.log ('Привет - ', name)
+// }
+
+// const arrow = (name) => {
+//     console.log('Привет - ', name)
+// }
+// arrow('Дима')
+
+// const arrow2 = name => console.log('Привет - ', name)
+
+// arrow2('Илюша')
+
+// // const pow2 = num => { // логика одна и таже 
+// //     return num ** 2 
+// // }
+// const pow2 = num => num ** 2 
+
+// console.log(pow2(5))
+
+
+
+//4 Параметры по умолчанию 
+// const sum = (a, b = 1) => a + b
+
+// console.log(sum(41,5))
+
+// function sumAll(...all){      //Весьма инетерсно что так можно "складывать" числа и не только
+// let result = 0
+// for (let num of all) {
+//     result += num
+// }
+// return result
+// }
+// const res = sumAll(1,2,3,4)
+// console.log(res)
+
+// 5 Замыкание   Поясни за логику в целом. Не совсем понимаю как работает. Мб надо просто переварить и снова вернуться к этому 
+// function createMember(name) {
+//     return function(lastName) {
+//         console.log(name + lastName)
+//     }
+// }
+
+// const logWithlastName =createMember ('Дима')
+// console.log(logWithlastName)
+// console.log(logWithlastName(' Лагода'))
+// console.log(logWithlastName(' Хуягода'))
